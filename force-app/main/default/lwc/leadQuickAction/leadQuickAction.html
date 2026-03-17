@@ -1,0 +1,43 @@
+<template>
+    <lightning-card title="Lead Contact Action" icon-name="standard:lead">
+        <div class="slds-p-around_medium">
+
+            <!-- Loading spinner while data fetches -->
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading"></lightning-spinner>
+            </template>
+
+            <template if:false={isLoading}>
+
+                <!-- Already contacted — show success state -->
+                <template if:true={lead.First_Contact_Made__c}>
+                    <div class="slds-text-color_success slds-m-bottom_small">
+                        ✅ First contact has been made with this lead.
+                    </div>
+                </template>
+
+                <!-- Not yet contacted — show action button -->
+                <template if:false={lead.First_Contact_Made__c}>
+                    <p class="slds-m-bottom_small">
+                        Click below to mark this lead as contacted.
+                        This removes it from the escalation queue.
+                    </p>
+                    <lightning-button
+                        label="Mark First Contact Made"
+                        variant="brand"
+                        onclick={handleMarkContact}
+                        disabled={isProcessing}>
+                    </lightning-button>
+                </template>
+
+                <!-- Status summary -->
+                <div class="slds-m-top_medium slds-border_top slds-p-top_small">
+                    <p><strong>Follow Up Email Sent:</strong> {followUpStatus}</p>
+                    <p><strong>Assignment Date:</strong> {assignmentDate}</p>
+                    <p><strong>Escalated:</strong> {escalatedStatus}</p>
+                </div>
+
+            </template>
+        </div>
+    </lightning-card>
+</template>

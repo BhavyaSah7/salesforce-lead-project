@@ -1,0 +1,33 @@
+.stat-tile {
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+}
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+.stat-label {
+    font-size: 0.85rem;
+    margin: 4px 0 0 0;
+    opacity: 0.9;
+}
+.stat-blue   { background-color: #1F4E79; }
+.stat-green  { background-color: #375623; }
+.stat-orange { background-color: #C55A11; }
+.stat-red    { background-color: #C00000; }
+.progress-bar-container {
+    height: 12px;
+    background-color: #e0e0e0;
+    border-radius: 6px;
+    margin: 8px 0;
+    overflow: hidden;
+}
+.progress-bar-fill {
+    height: 100%;
+    background-color: #375623;
+    border-radius: 6px;
+    transition: width 0.5s ease;
+}

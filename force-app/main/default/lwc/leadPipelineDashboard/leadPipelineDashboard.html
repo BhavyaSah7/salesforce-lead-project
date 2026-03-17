@@ -1,0 +1,71 @@
+<template>
+    <lightning-card title="Lead Pipeline Overview" icon-name="standard:dashboard">
+        <div class="slds-p-around_medium">
+
+            <!-- Loading spinner -->
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading stats"></lightning-spinner>
+            </template>
+
+            <template if:false={isLoading}>
+
+                <!-- Stat tiles grid -->
+                <div class="slds-grid slds-wrap slds-gutters">
+
+                    <!-- Total Leads -->
+                    <div class="slds-col slds-size_1-of-2 slds-m-bottom_small">
+                        <div class="stat-tile stat-blue">
+                            <p class="stat-number">{stats.totalLeads}</p>
+                            <p class="stat-label">Total Open Leads</p>
+                        </div>
+                    </div>
+
+                    <!-- Contacted -->
+                    <div class="slds-col slds-size_1-of-2 slds-m-bottom_small">
+                        <div class="stat-tile stat-green">
+                            <p class="stat-number">{stats.contactedLeads}</p>
+                            <p class="stat-label">First Contact Made</p>
+                        </div>
+                    </div>
+
+                    <!-- Pending Contact -->
+                    <div class="slds-col slds-size_1-of-2 slds-m-bottom_small">
+                        <div class="stat-tile stat-orange">
+                            <p class="stat-number">{stats.pendingContact}</p>
+                            <p class="stat-label">Awaiting First Contact</p>
+                        </div>
+                    </div>
+
+                    <!-- Escalated -->
+                    <div class="slds-col slds-size_1-of-2 slds-m-bottom_small">
+                        <div class="stat-tile stat-red">
+                            <p class="stat-number">{stats.escalatedLeads}</p>
+                            <p class="stat-label">Escalated — Needs Action</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Contact rate bar -->
+                <div class="slds-m-top_medium slds-border_top slds-p-top_small">
+                    <p class="slds-text-body_small">
+                        <strong>Contact Rate:</strong> {contactRate}%
+                        &nbsp;|&nbsp;
+                        <strong>Follow-up Emails Sent:</strong> {stats.followUpSent}
+                    </p>
+
+                    <!-- Progress bar -->
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill"
+                            lwc:ref="progressBar">
+                        </div>
+                    </div>
+                    <p class="slds-text-body_small slds-text-color_weak">
+                        {stats.contactedLeads} of {stats.totalLeads} leads contacted
+                    </p>
+                </div>
+
+            </template>
+        </div>
+    </lightning-card>
+</template>
