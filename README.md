@@ -17,6 +17,19 @@
 
 ---
 
+## 📸 Screenshots
+
+### Reports Dashboard
+![Reports Dashboard](https://github.com/user-attachments/assets/1267711a-7bb0-40ea-8bb3-390364b718db)
+
+### LWC Pipeline Dashboard (Home Page)
+![LWC Pipeline Dashboard](https://github.com/user-attachments/assets/ef07053a-0d62-4cfe-8a42-a843814616e4)
+
+### LWC Quick Action (Lead Record Page)
+![LWC Quick Action](https://github.com/user-attachments/assets/c345f7ac-35bc-4aa0-8df8-817ab0054e29)
+
+---
+
 ## 💼 Business Problem Solved
 
 | Problem | Solution Built |
